@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %title Findus
+
+  %body
+    %p.notice= notice
+    %p.alert= alert
+
+    = link_to "home", root_path
+    = link_to "sign up", new_user_registration_path
+    = link_to "sign in", new_user_session_path
+    = link_to "sign out", destroy_user_session_path
+    = yield
