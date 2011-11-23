@@ -35,3 +35,4 @@ end
 
 gem 'devise'
 gem 'haml'
+gem 'rails-backbone'

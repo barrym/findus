@@ -30,7 +30,9 @@
       .sidebar
         .well
           %h5 Sidebar
-          Sidebar stuff goes here
+          %ul
+            %li
+              %a{:href => '#users'}Users
       .content
         - if !user_signed_in?
           .hero-unit
@@ -45,3 +47,4 @@
           %p.alert-message.error= alert
 
         = yield
+        #main

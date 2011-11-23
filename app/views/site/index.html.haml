@@ -1,1 +1,9 @@
-hello world
+- if user_signed_in?
+  %script#home-template{:type => "text/template"}
+    This is the home page
+
+  :javascript
+    $(function() {
+      new Findus.Routers.Site();
+      Backbone.history.start();
+    })
