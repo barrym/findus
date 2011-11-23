@@ -7,13 +7,41 @@
     %title Findus
 
   %body
-    %p.notice= notice
-    %p.alert= alert
+    .topbar
+      .topbar-inner
+        .container-fluid
+          = link_to 'findus', root_path, :class => 'brand'
+          - if user_signed_in?
+            %ul.nav
+              %li
+                %a{:href => '#'}Home
+              %li
+                %a{:href => '#offtopic'}Off Topic
+              %li
+                %a{:href => '#games'}Games
+              %li
+                %a{:href => '#links'}
+                  Links
+            %p.pull-right
+              Logged in as
+              %a{:href => '#barrym'}barrym
+              = link_to "sign out", destroy_user_session_path, :method => :delete
+    .container-fluid
+      .sidebar
+        .well
+          %h5 Sidebar
+          Sidebar stuff goes here
+      .content
+        - if !user_signed_in?
+          .hero-unit
+            %h1 Welcome
+            %p
+              You're either with us or against us.
+          = link_to "sign up", new_user_registration_path
+          = link_to "sign in", new_user_session_path
+        - if notice
+          %p.alert-message.success= notice
+        - if alert
+          %p.alert-message.error= alert
 
-    - if user_signed_in?
-      = link_to "home", root_path
-      = link_to "sign out", destroy_user_session_path, :method => :delete
-    - else
-      = link_to "sign up", new_user_registration_path
-      = link_to "sign in", new_user_session_path
-    = yield
+        = yield
