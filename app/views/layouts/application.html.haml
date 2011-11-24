@@ -24,7 +24,8 @@
                   Links
             %p.pull-right
               Logged in as
-              %a{:href => '#barrym'}barrym
+              = image_tag current_user.gravatar_url(:size => 15)
+              %a{:href => "##{current_user.username}"}= current_user.username
               = link_to "sign out", destroy_user_session_path, :method => :delete
     .container-fluid
       .sidebar
