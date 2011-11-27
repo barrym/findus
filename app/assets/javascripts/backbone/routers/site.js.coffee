@@ -32,10 +32,13 @@ Findus.Routers.Site = Backbone.Router.extend({
         category = new Findus.Models.Category({id:id})
         category.fetch({
             success: (model, resp) ->
-                view = new Findus.Views.CategoriesShow({model:model})
-                $('#main').empty()
-                $('#main').append(view.render().el)
-                $('#working').hide()
+                model.posts.fetch({
+                    success: () ->
+                        view = new Findus.Views.CategoriesShow({model:model})
+                        $('#main').empty()
+                        $('#main').append(view.render().el)
+                        $('#working').hide()
+                })
 
             error: () ->
                 console.log("category not found")

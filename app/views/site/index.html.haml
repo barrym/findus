@@ -11,6 +11,19 @@
   %script#categories-show-template{:type => "text/template"}
     %h1 {{name}}
     {{description}}
+    %table
+      %thead
+        %tr
+          %th Subject
+          %th Author
+      %tbody
+        {[ _.each(posts, function(post) { ]}
+        %tr
+          %td
+            {{ post.get('subject') }}
+          %td
+            {{ post.get('username') }}
+        {[ }); ]}
 
   :javascript
     $(function() {
