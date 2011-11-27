@@ -9,3 +9,8 @@ window.Findus =
   Collections: {}
   Routers: {}
   Views: {}
+
+_.templateSettings = {
+    interpolate : /\{\{(.+?)\}\}/g
+    evaluate    : /\{\[(.+?)\]\}/g
+}

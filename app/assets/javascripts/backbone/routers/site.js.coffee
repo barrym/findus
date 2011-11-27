@@ -7,12 +7,13 @@ Findus.Routers.Site = Backbone.Router.extend({
     # initialize: () ->
 
     home: () ->
-        homeView = new Findus.Views.Home()
+        view = new Findus.Views.Home()
         $('#main').empty()
-        $('#main').append(homeView.render().el)
+        $('#main').append(view.render().el)
 
     users: () ->
-        console.log("implement a users view")
-
+        view = new Findus.Views.UsersIndex()
+        $('#main').empty()
+        $('#main').append(view.render().el)
 
 })

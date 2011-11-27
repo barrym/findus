@@ -2,6 +2,12 @@
   %script#home-template{:type => "text/template"}
     This is the home page, and it'll have all the latest shit. Popular topics, links etc.. newest posts.
 
+  %script#users-index-template{:type => "text/template"}
+    %ul
+      {[ _.each(users, function(user) { ]}
+      %li <a href="#users/fill_this_in">{{ user.get('username') }}</a>
+      {[ }); ]}
+
   :javascript
     $(function() {
       new Findus.Routers.Site();

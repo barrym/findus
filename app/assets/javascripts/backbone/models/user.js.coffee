@@ -3,6 +3,8 @@ Findus.Models.User = Backbone.Model.extend({
 })
 
 Findus.Collections.Users = Backbone.Collection.extend({
-    model: Findus.Models.User,
+    model: Findus.Models.User
     url: '/users'
+    comparator: (user) ->
+        user.get('name')
 })
