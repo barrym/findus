@@ -14,14 +14,10 @@
           - if user_signed_in?
             %ul.nav
               %li
-                %a{:href => '#'}Home
-              %li
-                %a{:href => '#offtopic'}Off Topic
-              %li
-                %a{:href => '#games'}Games
-              %li
-                %a{:href => '#links'}
-                  Links
+                %a{:href => "#"} Home
+              - @categories.each do |category|
+                %li
+                  %a{:href => "#categories/#{category.id}"}=category.name
             %p.pull-right
               Logged in as
               = image_tag current_user.gravatar_url(:size => 15)

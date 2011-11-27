@@ -16,6 +16,7 @@ Findus::Application.routes.draw do
   #   resources :products
 
   resources :users
+  resources :categories
 
   # Sample resource route with options:
   #   resources :products do

@@ -8,6 +8,10 @@
       %li <a href="#users/fill_this_in">{{ user.get('username') }}</a>
       {[ }); ]}
 
+  %script#categories-show-template{:type => "text/template"}
+    %h1 {{name}}
+    {{description}}
+
   :javascript
     $(function() {
       new Findus.Routers.Site();
