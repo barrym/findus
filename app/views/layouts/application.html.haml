@@ -19,6 +19,7 @@
                 %li
                   %a{:href => "#categories/#{category.id}"}=category.name
             %p.pull-right
+              = image_tag 'working.gif', :id => 'working', :style => 'display:none;'
               Logged in as
               = image_tag current_user.gravatar_url(:size => 15)
               %a{:href => "##{current_user.username}"}= current_user.username
