@@ -10,7 +10,19 @@
 
   %script#categories-show-template{:type => "text/template"}
     %h1 {{name}}
-    {{description}}
+    %p {{description}}
+    %button{:class => 'btn primary', :id => 'new_post'} New post
+    #new_post_form{:style => 'display:none'}
+      %form
+        %div
+          %label{:for => 'subject'} Subject
+          %input{:type => 'text', :id => 'subject'}
+        %div
+          %label{:for => 'body'} Body
+          %textarea{:id => 'body', :cols => 60, :rows => 10}
+        %div
+          %button#post.btn.success Post
+          %button#cancel.btn.error Cancel
     %table
       %thead
         %tr
